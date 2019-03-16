@@ -4,7 +4,7 @@
 #
 Name     : R-trimcluster
 Version  : 0.1.2.1
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/trimcluster_0.1-2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/trimcluster_0.1-2.1.tar.gz
 Summary  : Cluster Analysis with Trimming

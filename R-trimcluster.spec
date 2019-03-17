@@ -4,13 +4,13 @@
 #
 Name     : R-trimcluster
 Version  : 0.1.2.1
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/trimcluster_0.1-2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/trimcluster_0.1-2.1.tar.gz
 Summary  : Cluster Analysis with Trimming
 Group    : Development/Tools
 License  : GPL-2.0
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 No detailed description available
@@ -23,11 +23,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532103156
+export SOURCE_DATE_EPOCH=1552802524
 
 %install
+export SOURCE_DATE_EPOCH=1552802524
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1532103156
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -62,8 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library trimcluster|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  trimcluster || :
 
 
 %files
@@ -87,3 +86,5 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/trimcluster/help/trimcluster.rdx
 /usr/lib64/R/library/trimcluster/html/00Index.html
 /usr/lib64/R/library/trimcluster/html/R.css
+/usr/lib64/R/library/trimcluster/tests/examples.R
+/usr/lib64/R/library/trimcluster/tests/examples.Rout.save
